@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+.container {
+    font-family: "Sour Gummy", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 40px;
+    margin-top: 80px; 
+    list-style-type:decimal;
+    
+}
+
+.containerli {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type:decimal;
+}
+
+
+
+.Grey {
+    background-color: rgba(240, 240, 240, 1);
+    width: 250px;
+    border-right: 1px solid rgba(17, 17, 17, 1);
+    padding: 12px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    list-style-type:decimal;
+}
+
+.Dark {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(17, 17, 17, 1);
+    width: 250px;
+    height: 40px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.DarkText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.containerli:not(:last-child) {
+    border-bottom: 1px solid rgba(17, 17, 17, 1);
+}
+  
+.container li:first-child .Grey {
+    border-top-left-radius: 8px;
+}
+
+.container li:first-child .Dark {
+    border-top-right-radius: 8px;
+}
+  
+.container li:last-child .Grey {
+    border-bottom-left-radius: 8px;
+}
+  
+.container li:last-child .Dark {
+    border-bottom-right-radius: 8px;
+}
+
+.Btn {
+    border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+  
+.Btn:hover {
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    transition: all 0.3s ease;
+}
+  
+.tollTip {
+    display: none;
+    margin-top: -50px;
+}
+
+.Grey:hover {
+    .tollTip {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+      padding: 8px 16px;
+      z-index: 10;
+      display: block;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+      
+    }
+}
+  
+.Dark:hover {
+    .tollTip {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+      padding: 8px 16px;
+      z-index: 10;
+      display: block;
+      box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.ButtonDel{
+    position: absolute;
+    margin-left: 500px;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .Grey {
+      width: 172px;
+    }
+  
+    .Dark {
+      width: 172px;
+    }
+}
+
+@media (max-width: 600px){
+    .Dark:hover {
+        .tollTip{
+            margin-left: -180px;
+        }
+    }    
+}
