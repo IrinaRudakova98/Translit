@@ -11,16 +11,28 @@
     
 }
 
+.container ol{
+   
+}
+
 .containerli {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style-type:decimal;
+    list-style-position: inside;
+   
+}
+
+.img{
+    position: absolute;
+    margin-left: -40px;
+    margin-top: -7px;
 }
 
 
 
 .Grey {
+    
     background-color: rgba(240, 240, 240, 1);
     width: 250px;
     border-right: 1px solid rgba(17, 17, 17, 1);
@@ -28,10 +40,12 @@
     height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
-    list-style-type:decimal;
+    white-space: nowrap;
+    
 }
 
 .Dark {
+    
     background-color: rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(17, 17, 17, 1);
     width: 250px;

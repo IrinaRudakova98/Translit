@@ -11,51 +11,53 @@ interface Props {
   
   const Translit: FC<Props> = ({ words, onDelete }) => {
     return (
-        <div>
-            <ol  className={style.container}>
-                <li className={style.containerli}>
-                    <div className={style.Grey}>Привет 👋🏻</div>
-                    <div className={style.Dark}>Privet</div>
-                </li>
-                {words.map((word, index) => (
-                <Item key={index} word={word} index={index} onDelete={onDelete} />
-                ))}
-            </ol>
+    <div className={style.container}>
+      <ol>
+        <li >
+          <div className={style.containerli}><div className={style.Grey} >Привет 👋🏻</div>
+          <div className={style.Dark} >Privet</div>
+          <div><img className={style.img} src={Del} alt="Delit" /></div></div>
+          
+        </li>
+        {words.map((word, index) => (
+          <Item key={index} word={word} index={index} onDelete={onDelete}  />
+        ))}
+      </ol>
+    </div>
+  );
             
-            
-            
-        </div>  
-    );
 };
-
+/**/
 const Item: FC<{
-    word: string;
-    index: number;
-    onDelete: (index: number) => void;
+  word: string;
+  index: number;
+  onDelete: (index: number) => void;
 }> = ({ word, index, onDelete }) => {
-    const [showTooltip, setShowTooltip] = useState(false);
-    const wordRef = useRef<HTMLDivElement>(null);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const wordRef = useRef<HTMLDivElement>(null);
+    
 
-    useEffect(() => {
-        const checkOverflow = () => {
-          if (wordRef.current) {
-            const isOverflowing =
-              wordRef.current.scrollWidth > wordRef.current.clientWidth;
-            setShowTooltip(isOverflowing);
-          }
-        };
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (wordRef.current) {
+        const isOverflowing =
+          wordRef.current.scrollWidth > wordRef.current.clientWidth;
+        setShowTooltip(isOverflowing);
+      }
+    };
 
-        checkOverflow();
+    checkOverflow();
     window.addEventListener("resize", checkOverflow);
 
     return () => {
       window.removeEventListener("resize", checkOverflow);
     };
-}, [word]);
+  }, [word]);
 
 return (
-    <li className={style.containerli}>
-      <div className={style.Grey} ref={wordRef}>
+    <li >
+      <div className={style.containerli}>
+        <div className={style.Grey} ref={wordRef}>
         {showTooltip && <div className={style.tollTip}>{word}</div>}
         {word}
       </div>
@@ -75,6 +77,8 @@ return (
           <img src={Del} alt="delite" />
         </button>
       </div>
+      </div>
+      
     </li>
   );
 };
